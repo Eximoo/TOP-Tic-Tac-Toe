@@ -1,0 +1,27 @@
+.hero {
+  width: 100%;
+  max-width: 600px;
+  height: 675px;
+  margin: auto;
+  background-color: white;
+}
+.controller {
+  height: 75px;
+}
+.board {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1px;
+  background-color: black;
+}
+.marker {
+}
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1;
+  background-color: white;
+  font-size: 128px;
+}
