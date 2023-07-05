@@ -6,7 +6,7 @@ const Player = (name, marker) => {
   return { name, marker };
 };
 const GameBoard = (() => {
-  const board = new Array(10).fill(null);
+  const board = new Array(9).fill(null);
 
   //temp
   const showBoard = () => {
@@ -18,5 +18,15 @@ const GameBoard = (() => {
   const getBoard = () => {
     return board;
   };
-  return { showBoard, getBoard };
+  const setTile = (id, value) => {
+    if (id < 0 || id > 8) {
+      throw new Error('Out of bound ID needs to be in range 0-8');
+    }
+    board[id] = value;
+  };
+  const updateDisplay = () => {
+    const el = document.querySelector('.board').children;
+    board.forEach((element, index) => (el.item(index).innerHTML = element));
+  };
+  return { showBoard, getBoard, setTile, updateDisplay };
 })();
